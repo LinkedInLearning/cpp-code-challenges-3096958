@@ -5,15 +5,16 @@
 // Do this for a 10x10 grid.
 // The grid wraps around in all directions.
 // Rules
-// Any live cell with fewer than two live neighbours dies, as if by underpopulation.
-// Any live cell with two or three live neighbours lives on to the next generation.
-// Any live cell with more than three live neighbours dies, as if by overpopulation.
-// Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+// Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+// Any live cell with two or three live neighbors lives on to the next generation.
+// Any live cell with more than three live neighbors dies, as if by overpopulation.
+// Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
 
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cstring>
 
 int live_neighbors(char game[][11],int i, int j){
     int neighbors = 0;
@@ -65,26 +66,26 @@ int main(){
         }
         std::cout << "\n";
 
-        memcpy(new_game,game,110);
+        std::memcpy(new_game,game,110);
         for(int i=0; i<10; i++){
             for(int j=0; j<10; j++){
                 int n = live_neighbors(game,i,j);
                 
-                // Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+                // Any live cell with fewer than two live neighbors dies, as if by underpopulation.
                 if(game[i][j]=='X' && n<2)
                     new_game[i][j]='-';
-                // Any live cell with two or three live neighbours lives on to the next generation.
+                // Any live cell with two or three live neighbors lives on to the next generation.
                 //if(game[i][j]=='X' && (n==2 || n==3))
-                //    new_game[i][j]='X';
-                // Any live cell with more than three live neighbours dies, as if by overpopulation.
+                //    new_game[i][j]='X'; 
+                // Any live cell with more than three live neighbors dies, as if by overpopulation.
                 if(game[i][j]=='X' && n>3)
                     new_game[i][j]='-';
-                // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+                // Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
                 if(game[i][j]=='-' && n==3)
                     new_game[i][j]='X';
             }
         }
-        memcpy(game,new_game,110);
+        std::memcpy(game,new_game,110);
 
         std::cout << "Press Enter for the next generation, or type \"Exit\": ";
         std::getline(std::cin,go_on);

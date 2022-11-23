@@ -7,7 +7,7 @@
 #include <iostream>
 
 // Age in Days, main()
-// Summary: This application asks the user-s birth date and prints theis age in days.
+// Summary: This application asks the user's birth date and prints their age in days.
 
 #include <iostream>
 #include <string>

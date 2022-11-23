@@ -13,7 +13,7 @@
 #include <sstream>
 
 // Finding Relatives, main()
-// Summary: This application displays the first pair of possible relatives froma list of names in a CSV file.
+// Summary: This application displays the first pair of possible relatives from a list of names in a CSV file.
  
 int main(){
     

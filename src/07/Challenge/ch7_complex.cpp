@@ -1,7 +1,7 @@
 // C++ Code Challenges, LinkedIn Learning
 
 // Challenge #7: Creating a Class
-// Create a classes to perform complex number calculations.
+// Create a class to perform complex number calculations.
 // A complex number contains a real part and an imaginary part.
 // a+ib
 // a and b are real numbers.
