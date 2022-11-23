@@ -4,7 +4,8 @@
 // Write an application that runs Conway's Game of Life, the best-known cellular automaton.
 // Do this for a 10x10 grid.
 // The grid wraps around in all directions.
-// Rules
+
+// Rules:
 // Any live cell with fewer than two live neighbors dies, as if by underpopulation.
 // Any live cell with two or three live neighbors lives on to the next generation.
 // Any live cell with more than three live neighbors dies, as if by overpopulation.
