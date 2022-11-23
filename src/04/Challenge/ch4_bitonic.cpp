@@ -21,7 +21,7 @@
 
 bool is_bitonic(const std::vector<int> &v){
     
-    // Write your code here.
+    // Write your code here
 
     return false;
 }
