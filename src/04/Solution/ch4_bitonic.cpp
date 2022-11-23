@@ -8,7 +8,7 @@
 // Formally, a bitonic sequence is a sequence with x[0] <= ... <= x[k] >= ... >= x[n-1]
 //           for some k between 0 and n-1, or a circular shift of such a sequence.
 
-// Special bitonic cases: Monotonic sequences and sequences of the same value.
+// Special bitonic cases: Monotonic sequences and sequences where all elements have the same value.
 
 #include <iostream>
 #include <vector>
@@ -19,11 +19,10 @@
 //           v: A reference to the vector to analyze.
 // Returns: A boolean value: True for bitonic sequences, false otherwise.
 
-bool is_bitonic(const std::vector<int> &v) {
+bool is_bitonic(const std::vector<int> &v){
     int count = v.size();
     if (count < 4) return false;
 
-    // Count
     bool rising = false;
     int i = 0;
 
@@ -67,26 +66,28 @@ bool is_bitonic(const std::vector<int> &v) {
         return false;  // Not a bitonic sequence because there is a 4th slope
 
     // 3 slopes
-    if (rising && v[i] <= v[0])  // The last rising slope is the same as the first one
+    if (rising && v[i] <= v[0])  // The last rising slope is the same as the first slope
         return true;
-    if (!rising && v[i] >= v[0])  // The last falling slope is the same as the first one
+    if (!rising && v[i] >= v[0])  // The last falling slope is the same as the first slope
         return true;
-    return false;  // The third slope is different from the first one (there is a 4th)
+    return false;  // The third slope is different from the first one (there is a 4th slope)
 }
 
 // Main function
-int main() {
-    // std::vector<int> myvec = {1, 2, 5, 4, 3};  // Yes
-    // std::vector<int> myvec = {1, 1, 1, 1, 1};  // No
+int main(){
+    // Uncomment one of these lines and make sure you get the result at the right. 
+    
+    std::vector<int> myvec = {1, 2, 5, 4, 3};  // Yes
+    // std::vector<int> myvec = {1, 1, 1, 1, 1};  // Yes
     // std::vector<int> myvec = {3, 4, 5, 2, 2};  // Yes
     // std::vector<int> myvec = {3, 4, 5, 2, 4};  // No
-    // std::vector<int> myvec = {1, 2, 3, 4, 5};  // No
-    // std::vector<int> myvec = {1, 2, 3, 3, 3};  // Yes
-    // std::vector<int> myvec = {5, 4, 4, 2, 6};  // Yes
-    // std::vector<int> myvec = {5, 4, 3, 2, 4};  // Yes
+    // std::vector<int> myvec = {1, 2, 3, 4, 5};  // Yes
+    // std::vector<int> myvec = {1, 2, 3, 1, 2};  // No
+    // std::vector<int> myvec = {5, 4, 6, 2, 6};  // No
+    // std::vector<int> myvec = {5, 4, 3, 2, 1};  // Yes
     // std::vector<int> myvec = {5, 4, 3, 2, 6};  // Yes
     // std::vector<int> myvec = {5, 4, 6, 5, 4};  // No
-    std::vector<int> myvec = {5, 4, 6, 5, 5};  // Yes
+    // std::vector<int> myvec = {5, 4, 6, 5, 5};  // Yes
 
     std::cout << std::endl;
     std::cout << (is_bitonic(myvec) == true ? "Yes, it is bitonic." : "No, it is not bitonic.");

@@ -16,25 +16,10 @@
 // Returns: A boolean value: True on success, false otherwise.
 
 bool sort_array(int *arr, int n){
-    if (arr == NULL)
-        return false;
-    if (n < 2)
-        return true;
 
-    // Bubble sort algorithm
-    bool sorted = false;
-    int temp;
-    while (!sorted) {
-        sorted = true;
-        for (int i = 0; i < n - 1; i++)
-            if (arr[i] > arr[i + 1]) {
-                temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-                sorted = false;
-            }
-    }
-    return true;
+    // Write your code here
+
+    return false;
 }
 
 // Main function
