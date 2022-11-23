@@ -67,7 +67,7 @@ bool is_valid_ip(std::string ip){
 int main() {
     std::string s;
     
-    std::cout << "\nEnter an ip address in decimal: ";
+    std::cout << "\nEnter an IP address in decimal: ";
     std::cin >> s;
     std::cout << " \n" << s << (is_valid_ip(s) ? " is" : " is not" ) << " a valid IP address.\n\n";
     return 0;
