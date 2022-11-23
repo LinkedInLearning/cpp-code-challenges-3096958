@@ -24,7 +24,7 @@ int main() {
     std::string s;
     
     std::cout << "Enter a string: ";
-    std::cin >> s;
-    std::cout << " \n" << s << (is_palindrome(s) ? " is" : " is not" ) << " a palindrome.\n\n";
+    std::getline(std::cin,s);
+    std::cout << "\n\"" << s << (is_palindrome(s) ? "\" is" : "\" is not" ) << " a palindrome.\n\n";
     return 0;
 }
