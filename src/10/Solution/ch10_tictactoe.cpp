@@ -1,6 +1,6 @@
 // C++ Code Challenges, LinkedIn Learning
 
-// Challenge #10: Checking for Palindromes
+// Challenge #10: Playing TicTacToe
 // Write an application that plays TicTacToe against the user.
 
 #include <iostream>
@@ -29,10 +29,10 @@ void ask_for_move(char game[][3], char mark){
 }
 
 // count_marks()
-// Summary: This function returns the number of marks placed in the game.
+// Summary: This function returns the number of marks placed in the game (X and O alike).
 // Arguments:
 //           game[3][3]: The state of the game.
-// Returns: Nothing.
+// Returns: An integer with the mark count.
 int count_marks(char game[][3]){
     int i, j, count = 0;
     for(i=0; i<3; i++)
@@ -43,14 +43,15 @@ int count_marks(char game[][3]){
 }
 
 // make_move()
-// Summary: This function makes a move in an ongoing tic tac toe game.
+// Summary: This AI function makes a move on behalf of the computer in an ongoing tic tac toe game.
 // Arguments:
 //           game[3][3]: The state of the game.
-//           mark: The computer's mark: 'X' or 'O'.
+//           mark: The AI's mark: 'X' or 'O'.
 // Returns: Nothing.
-#define TWO_PLAYERd
+
+//#define TWO_PLAYERS
 void make_move(char game[][3], char mark){ 
-    #ifdef TWO_PLAYER
+    #ifdef TWO_PLAYERS
     ask_for_move(game,mark);
     #else
     // Win if possible
@@ -59,56 +60,56 @@ void make_move(char game[][3], char mark){
 
     // Horizontal and vertical victories
     for(i=0; i<3; i++){ 
-        if(game[i][0]== mark && game[i][0]==game[i][1] && game[i][2]==' '){
-            game[i][2] = mark;
-            return;
-        }
-        if(game[i][0]== mark && game[i][0]==game[i][2] && game[i][1]==' '){
-            game[i][1] = mark;
-            return;
-        }
-        if(game[i][1]== mark && game[i][1]==game[i][2] && game[i][0]==' '){
+        if(game[i][0]== ' ' && game[i][1]==mark && game[i][2]==mark){
             game[i][0] = mark;
             return;
         }
-        if(game[0][i]== mark && game[0][i]==game[1][i] && game[2][i]==' '){
-            game[2][i] = mark;
+        if(game[i][0]==mark && game[i][1]== ' ' && game[i][2]==mark){
+            game[i][1] = mark;
             return;
         }
-        if(game[0][i]== mark && game[0][i]==game[2][i] && game[1][i]==' '){
+        if(game[i][0]==mark && game[i][1]==mark && game[i][2]== ' '){
+            game[i][2] = mark;
+            return;
+        }
+        if(game[0][i]== ' ' && game[1][i]==mark && game[2][i]==mark){
+            game[0][i] = mark;
+            return;
+        }
+        if(game[0][i]==mark && game[1][i]== ' ' && game[2][i]==mark){
             game[1][i] = mark;
             return;
         }
-        if(game[1][i]== mark && game[1][i]==game[2][i] && game[0][i]==' '){
-            game[0][i] = mark;
+        if(game[0][i]==mark && game[1][i]==mark && game[2][i]== ' '){
+            game[2][i] = mark;
             return;
         }
     }
     
     // Diagonal victories
-    if(game[1][1]==mark && game[0][0]==game[1][1] && game[2][2]==' '){
-        game[2][2] = mark;
-        return;
-    }
-    if(game[1][1]==mark && game[2][2]==game[1][1] && game[0][0]==' '){
+    if(game[0][0]==' ' && game[1][1]==mark && game[2][2]==mark){
         game[0][0] = mark;
         return;
     }
-    if(game[0][0]==mark && game[0][0]==game[2][2] && game[1][1]==' '){
+    if(game[0][0]==mark && game[1][1]==' ' && game[2][2]==mark){
         game[1][1] = mark;
+        return;
+    }
+    if(game[0][0]==mark && game[1][1]==mark && game[2][2]==' '){
+        game[2][2] = mark;
         return;
     }
 
-    if(game[1][1]==mark && game[0][2]==game[1][1] && game[2][0]==' '){
+    if(game[2][0]==' ' && game[1][1]==mark && game[0][2]==mark){
         game[2][0] = mark;
         return;
     }
-    if(game[1][1]==mark && game[2][0]==game[1][1] && game[0][2]==' '){
-        game[0][2] = mark;
+    if(game[2][0]==mark && game[1][1]==' ' && game[0][2]==mark){
+        game[1][1] = mark;
         return;
     }
-    if(game[2][0]==mark && game[0][2]==game[2][0] && game[1][1]==' '){
-        game[1][1] = mark;
+    if(game[2][0]==mark && game[1][1]==mark && game[0][2]==' '){
+        game[0][2] = mark;
         return;
     }
 
