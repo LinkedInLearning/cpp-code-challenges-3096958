@@ -4,7 +4,7 @@
 // Write a function that takes in the location of a knight in a chessboard and returns a vector of strings with the possible locations it might move to.
 // The locations are expressed as strings in algebraic notation.
 // Print the list on the terminal.
-// Don’t worry about other pieces on the chessboard.
+// Don't worry about other pieces on the chessboard.
 
 #include <iostream>
 #include <vector>
@@ -14,7 +14,7 @@
 // Summary: This function receives a string with the location of a knight in a chessboard and returns a vector of strings with the possible locations it might move to.
 // Arguments:
 //           knight: The knight's location.
-// Returns: Am STL vector of strings with the possible locations to move.
+// Returns: An STL vector of strings with the possible locations to move.
 
 std::vector<std::string> knight_moves(std::string knight){
     std::vector<std::string> moves;
@@ -28,8 +28,8 @@ std::vector<std::string> knight_moves(std::string knight){
     int new_y;
     std::string new_loc = "  ";
 
-    for(int i = 0; i < 2 ; i++)
-        for(int j = 0; j < 2 ; j++){
+    for(int i = 0; i < 2; i++)
+        for(int j = 0; j < 2; j++){
             new_x = x + delta1[i];
             new_y = y + delta2[j];
             
@@ -54,11 +54,14 @@ std::vector<std::string> knight_moves(std::string knight){
 }
 
 // Main function
-int main() {
-    std::vector<std::string> the_moves = knight_moves("d4");
-    for (auto element : the_moves) {
+int main(){
+    std::string knight = "d4";
+    
+    std::vector<std::string> the_moves = knight_moves(knight);
+    std::cout << std::endl << "Possible moves from " << knight << ": ";
+
+    for (auto element : the_moves)
         std::cout << element << " ";
-    }
     std::cout << std::endl << std::endl;
     return 0;
 }

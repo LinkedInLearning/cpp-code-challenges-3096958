@@ -1,3 +1,6 @@
+#ifndef COMPLEX_NUM_H
+#define COMPLEX_NUM_H
+
 #include <iostream>
 
 class complex_num{
@@ -11,9 +14,7 @@ class complex_num{
          complex_num operator -(complex_num);
          complex_num operator *(complex_num);
          complex_num operator /(complex_num);
-         void set_number(double, double);
-         double get_real();
-         double get_imaginary();
          void print(std::ostream &os);
 };
 
+#endif /* COMPLEX_NUM_H */
