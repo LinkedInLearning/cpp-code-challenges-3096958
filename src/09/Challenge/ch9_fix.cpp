@@ -2,46 +2,39 @@
 
 // Challenge #9: Fixing Faulty Code
 // Fix the bugs in the provided code.
-// The application is supposed to ask the user for a string, and count the vowels in it.
+// The application is supposed to ask the user for a string, and print the number of vowels contained in the string.
 
+// For example: 
+// "I love my dog" has 4 vowels, "education" has 5 vowels, and "Sly spy by my crypt" has 0 vowels.
 
-#include <iostream>
-//                       error
 #include <string>
-#include <algorithm>
 
-
+// vowel_count()
+// Summary: This function counts the number of vowels in an incoming string.
+// Arguments:
+//           str: The string to analyze.
+// Returns: An integer with the vowel count.
 int vowel_count(const std::string str){
     int count=0;
-//    for(int i; i<str.length(); i++)   error
-    for(int i=0; i<str.length(); i++)
+    for(int i; i<str.length(); i++)
         switch(str[i]){
-            /*case 'a':
+            case 'a':
             case 'e':
             case 'i':
             case 'o':
-            case 'u':*/   //error
-            case 'A':
-            case 'E':
-            case 'I':
-            case 'O':
-            case 'U':
+            case 'u':
             count++;
         }
     return count;
 }
 
 // Faulty code, main()
-// Summary: This application simulates the game described in the Monty Hall problem a large number of times to reveal the probability of winning by always choosing to switch the choice for a door.
+// Summary: This application ask the user for a string, and prints the number of vowels in it.
 
-
-//void main(){    error
-int main(){    
+void main(){
     std::string input; 
     std::cout << "Enter some text: ";
-    //std::cin >> input;  error  
-    std::getline(std::cin,input);
-    std::transform(input.begin(), input.end(), input.begin(), toupper);
+    std::cin >> input;
     std::cout << "\nThe text you entered contains " << vowel_count(input) << " vowels.\n\n";
 }
  
