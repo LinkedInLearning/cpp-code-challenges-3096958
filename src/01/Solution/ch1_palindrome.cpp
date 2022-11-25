@@ -20,7 +20,7 @@ bool is_palindrome(std::string str){
 }
 
 // Main function
-int main() {
+int main(){
     std::string s;
     std::cout << "Enter a string: ";
     std::getline(std::cin,s);
