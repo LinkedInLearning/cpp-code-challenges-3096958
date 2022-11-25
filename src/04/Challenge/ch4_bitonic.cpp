@@ -18,7 +18,6 @@
 // Arguments:
 //           v: A reference to the vector to analyze.
 // Returns: A boolean value: True for bitonic sequences, false otherwise.
-
 bool is_bitonic(const std::vector<int> &v){
     
     // Write your code here

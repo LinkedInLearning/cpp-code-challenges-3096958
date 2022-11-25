@@ -14,7 +14,6 @@
 //           arr: A pointer acting as the array to sort.
 //           n: The size of the array.
 // Returns: A boolean value: True on success, false otherwise.
-
 bool sort_array(int *arr, int n){
 
     // Write your code here

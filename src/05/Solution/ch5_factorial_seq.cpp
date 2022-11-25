@@ -14,7 +14,6 @@
 // Arguments:
 //           n: The last factorial to print.
 // Returns: n!, the last calculated factorial.
-
 int print_factorials(int n){
     int fact;
     fact = n == 0 ? 1 : n * print_factorials(n - 1);

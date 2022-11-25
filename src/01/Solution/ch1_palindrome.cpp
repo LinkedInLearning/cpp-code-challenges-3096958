@@ -12,7 +12,6 @@
 // Arguments:
 //           str: The string to analyze.
 // Returns: A boolean value. True for palindromes, false otherwise.
-
 bool is_palindrome(std::string str){
     std::string rev = str;
     std::reverse(rev.begin(), rev.end());  // rev is the reverse of str

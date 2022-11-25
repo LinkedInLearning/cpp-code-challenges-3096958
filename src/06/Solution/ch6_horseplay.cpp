@@ -15,7 +15,6 @@
 // Arguments:
 //           knight: The knight's location.
 // Returns: An STL vector of strings with the possible locations to move.
-
 std::vector<std::string> knight_moves(std::string knight){
     std::vector<std::string> moves;
     int x, y;

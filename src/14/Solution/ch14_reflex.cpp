@@ -7,7 +7,6 @@
 // Otherwise, print a failure message.
 // Ignore the case ("CAT" = "cat" = "CaT").
 
-
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -15,6 +14,8 @@
  
 std::string words[10]={"CAT","RAT","BAT","CAP","BAG","RAG","RAP","BET","BEG","LET"};
 
+// The Reflex Game, main()
+// Summary: This application measures the time it takes a user to type in a random 3-letter word.
 int main(){
     std::cout << "\n";
     std::cout << "                   The Reflex Game\n";
@@ -65,4 +66,5 @@ int main(){
         std::cout << "Try again? (Y/N): ";
         std::cin >> try_again;
     }while(try_again[0]=='Y' || try_again[0]=='y');
+    return 0;
 }

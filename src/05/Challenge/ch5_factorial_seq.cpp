@@ -14,7 +14,6 @@
 // Arguments:
 //           n: The last factorial to print.
 // Returns: n!, the last calculated factorial.
-
 int print_factorials(int n){
     
     // Write your code here

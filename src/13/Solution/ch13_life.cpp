@@ -11,51 +11,62 @@
 // Any live cell with more than three live neighbors dies, as if by overpopulation.
 // Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <cstring>
 
-int live_neighbors(char game[][11],int i, int j){
+#define N 10
+#define M 10
+
+// live_neighbors()
+// Summary: This function returns the number of live neighbors to a given cell.
+// Arguments:
+//           game[N][M]: The state of the game.
+// Returns: An integer with the live neighbor count.
+int live_neighbors(char game[][M],int i, int j){
     int neighbors = 0;
-    i+=10;
-    j+=10;
-    if(game[(i+1)%10][(j+1)%10]=='X')
+    i+=N;
+    j+=M;
+    if(game[(i+1)%N][(j+1)%M]=='X')
         neighbors++;
-    if(game[(i+1)%10][j%10]=='X')
+    if(game[(i+1)%N][j%M]=='X')
         neighbors++;
-    if(game[(i+1)%10][(j-1)%10]=='X')
+    if(game[(i+1)%N][(j-1)%M]=='X')
         neighbors++;
-    if(game[i%10][(j+1)%10]=='X')
+    if(game[i%N][(j+1)%M]=='X')
         neighbors++;
-    if(game[i%10][(j-1)%10]=='X')
+    if(game[i%N][(j-1)%M]=='X')
         neighbors++;
-    if(game[(i-1)%10][(j+1)%10]=='X')
+    if(game[(i-1)%N][(j+1)%M]=='X')
         neighbors++;
-    if(game[(i-1)%10][j%10]=='X')
+    if(game[(i-1)%N][j%M]=='X')
         neighbors++;
-    if(game[(i-1)%10][(j-1)%10]=='X')
+    if(game[(i-1)%N][(j-1)%M]=='X')
         neighbors++;
     return neighbors;
 }
 
-
 // Conway's Game of Life, main()
 // Summary: This application is a simulation of Conway's game of life.
- 
 int main(){    
-    char game[10][11] = {"-----X----",
-                         "------X---",
-                         "----XXX---",
-                         "----------",
-                         "----------",
-                         "----------",
-                         "----------",
-                         "----------",
-                         "----------",
-                         "----------"};
-    char new_game[10][11];
+    // The game, initialized with a glider and a blinker.
+    char game[N][M];  
+    std::memset(game,'-',N*M);
+
+    // A glider
+    game[0][1]='X'; // - X - - - - - - - -
+    game[1][2]='X'; // - - X - - - - - - -
+    game[2][0]='X'; // X X X - - - - - - -
+    game[2][1]='X';
+    game[2][2]='X';
+
+    // A blinker
+    game[2][6]='X'; // - - - - - - - - - -
+    game[2][7]='X'; // - - - - - - - - - -
+    game[2][8]='X'; // - - - - - - X X X -
+    
+    char new_game[N][M];
     int generation = 0;
     std::string go_on;
     do{
@@ -67,9 +78,9 @@ int main(){
         }
         std::cout << "\n";
 
-        std::memcpy(new_game,game,110);
-        for(int i=0; i<10; i++){
-            for(int j=0; j<10; j++){
+        std::memcpy(new_game,game,N*M);
+        for(int i=0; i<N; i++)
+            for(int j=0; j<M; j++){
                 int n = live_neighbors(game,i,j);
                 
                 // Any live cell with fewer than two live neighbors dies, as if by underpopulation.
@@ -85,8 +96,7 @@ int main(){
                 if(game[i][j]=='-' && n==3)
                     new_game[i][j]='X';
             }
-        }
-        std::memcpy(game,new_game,110);
+        std::memcpy(game,new_game,N*M);
 
         std::cout << "Press Enter for the next generation, or type \"Exit\": ";
         std::getline(std::cin,go_on);
@@ -96,6 +106,3 @@ int main(){
     
     return 0;
 }
- 
-
-

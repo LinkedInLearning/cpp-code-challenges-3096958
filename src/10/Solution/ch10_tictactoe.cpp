@@ -12,7 +12,6 @@
 //           game[3][3]: The state of the game.
 //           mark: The user's mark: 'X' or 'O'.
 // Returns: Nothing.
-
 void ask_for_move(char game[][3], char mark){
     std::string str;
     int row, col;

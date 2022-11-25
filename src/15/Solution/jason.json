@@ -12,10 +12,10 @@
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],]]
+            ],
             "options": {
                 "cwd": "${fileDirname}"
-            },[
+            },
             "problemMatcher": [
                 "$gcc"
             ],

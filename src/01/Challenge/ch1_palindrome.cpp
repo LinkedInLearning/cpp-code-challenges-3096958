@@ -12,7 +12,6 @@
 // Arguments:
 //           str: The string to analyze.
 // Returns: A boolean value. True for palindromes, false otherwise.
-
 bool is_palindrome(std::string str){
 
     // Write your code here

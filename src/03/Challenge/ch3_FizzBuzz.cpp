@@ -9,7 +9,6 @@
 
 // FizzBuzz, main()
 // Summary: This application runs on the main function.
-
 int main(){
     int n; // How many numbers to include in the sequence.
     
