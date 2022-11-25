@@ -1,7 +1,7 @@
 // C++ Code Challenges, LinkedIn Learning
 
-// Challenge #10: Checking for Palindromes
-// Write an application that plays TicTacToe against the user.
+// Challenge #10: Playing Tic-Tac-Toe
+// Write an application that plays Tic-Tac-Toe against the user.
 
 #include <iostream>
 #include <string>
@@ -29,10 +29,10 @@ void ask_for_move(char game[][3], char mark){
 }
 
 // count_marks()
-// Summary: This function returns the number of marks placed in the game.
+// Summary: This function returns the number of marks placed in the game (X and O alike).
 // Arguments:
 //           game[3][3]: The state of the game.
-// Returns: Nothing.
+// Returns: An integer with the mark count.
 int count_marks(char game[][3]){
     int i, j, count = 0;
     for(i=0; i<3; i++)
@@ -43,145 +43,16 @@ int count_marks(char game[][3]){
 }
 
 // make_move()
-// Summary: This function makes a move in an ongoing tic tac toe game.
+// Summary: This AI function makes a move on behalf of the computer in an ongoing tic-tac-toe game.
 // Arguments:
 //           game[3][3]: The state of the game.
-//           mark: The computer's mark: 'X' or 'O'.
+//           mark: The AI's mark: 'X' or 'O'.
 // Returns: Nothing.
-#define TWO_PLAYERd
+
 void make_move(char game[][3], char mark){ 
-    #ifdef TWO_PLAYER
-    ask_for_move(game,mark);
-    #else
-    // Win if possible
-    int i, j;
-    char opponent = mark == 'X' ? 'O' : 'X';
 
-    // Horizontal and vertical victories
-    for(i=0; i<3; i++){ 
-        if(game[i][0]== mark && game[i][0]==game[i][1] && game[i][2]==' '){
-            game[i][2] = mark;
-            return;
-        }
-        if(game[i][0]== mark && game[i][0]==game[i][2] && game[i][1]==' '){
-            game[i][1] = mark;
-            return;
-        }
-        if(game[i][1]== mark && game[i][1]==game[i][2] && game[i][0]==' '){
-            game[i][0] = mark;
-            return;
-        }
-        if(game[0][i]== mark && game[0][i]==game[1][i] && game[2][i]==' '){
-            game[2][i] = mark;
-            return;
-        }
-        if(game[0][i]== mark && game[0][i]==game[2][i] && game[1][i]==' '){
-            game[1][i] = mark;
-            return;
-        }
-        if(game[1][i]== mark && game[1][i]==game[2][i] && game[0][i]==' '){
-            game[0][i] = mark;
-            return;
-        }
-    }
-    
-    // Diagonal victories
-    if(game[1][1]==mark && game[0][0]==game[1][1] && game[2][2]==' '){
-        game[2][2] = mark;
-        return;
-    }
-    if(game[1][1]==mark && game[2][2]==game[1][1] && game[0][0]==' '){
-        game[0][0] = mark;
-        return;
-    }
-    if(game[0][0]==mark && game[0][0]==game[2][2] && game[1][1]==' '){
-        game[1][1] = mark;
-        return;
-    }
+    // Write your code here
 
-    if(game[1][1]==mark && game[0][2]==game[1][1] && game[2][0]==' '){
-        game[2][0] = mark;
-        return;
-    }
-    if(game[1][1]==mark && game[2][0]==game[1][1] && game[0][2]==' '){
-        game[0][2] = mark;
-        return;
-    }
-    if(game[2][0]==mark && game[0][2]==game[2][0] && game[1][1]==' '){
-        game[1][1] = mark;
-        return;
-    }
-
-    // Block if possible
-
-    // Horizontal and vertical victories
-    for(i=0; i<3; i++){ 
-        if(game[i][0]== opponent && game[i][0]==game[i][1] && game[i][2]==' '){
-            game[i][2] = mark;
-            return;
-        }
-        if(game[i][0]== opponent && game[i][0]==game[i][2] && game[i][1]==' '){
-            game[i][1] = mark;
-            return;
-        }
-        if(game[i][1]== opponent && game[i][1]==game[i][2] && game[i][0]==' '){
-            game[i][0] = mark;
-            return;
-        }
-        if(game[0][i]== opponent && game[0][i]==game[1][i] && game[2][i]==' '){
-            game[2][i] = mark;
-            return;
-        }
-        if(game[0][i]== opponent && game[0][i]==game[2][i] && game[1][i]==' '){
-            game[1][i] = mark;
-            return;
-        }
-        if(game[1][i]== opponent && game[1][i]==game[2][i] && game[0][i]==' '){
-            game[0][i] = mark;
-            return;
-        }
-    }
-    
-    // Diagonal victories
-    if(game[1][1]==opponent && game[0][0]==game[1][1] && game[2][2]==' '){
-        game[2][2] = mark;
-        return;
-    }
-    if(game[1][1]==opponent && game[2][2]==game[1][1] && game[0][0]==' '){
-        game[0][0] = mark;
-        return;
-    }
-    if(game[0][0]==opponent && game[0][0]==game[2][2] && game[1][1]==' '){
-        game[1][1] = mark;
-        return;
-    }
-
-    if(game[1][1]==opponent && game[0][2]==game[1][1] && game[2][0]==' '){
-        game[2][0] = mark;
-        return;
-    }
-    if(game[1][1]==opponent && game[2][0]==game[1][1] && game[0][2]==' '){
-        game[0][2] = mark;
-        return;
-    }
-    if(game[2][0]==opponent && game[0][2]==game[2][0] && game[1][1]==' '){
-        game[1][1] = mark;
-        return;
-    }
-
-    if(count_marks(game) >= 0 && game[1][1]==' '){
-        game[1][1] = mark;
-        return;
-    }
-
-    for(i=0; i<3; i++)
-        for(j=0; j<3; j++)
-            if(game[i][j] == ' '){
-                 game[i][j] = mark;
-                 return;
-            }
- 
-    #endif
     return;
 }
 
@@ -195,31 +66,14 @@ void make_move(char game[][3], char mark){
 //                                  'O': O won.
 //                                  't': A tie.
 char get_state(char game[][3]){
-    int i, j;
 
-    // Horizontal and vertical victories
-    for(i=0; i<3; i++){ 
-        if(game[i][0]!= ' ' && game[i][0]==game[i][1] && game[i][1]==game[i][2])
-            return game[i][0];
-        if(game[0][i]!= ' ' && game[0][i]==game[1][i] && game[1][i]==game[2][i])
-            return game[0][i];
-    }
-
-    // Diagonal victories
-    if(game[1][1]!= ' ' && game[0][0]==game[1][1] && game[1][1]==game[2][2])
-        return game[1][1];
-    if(game[1][1]!= ' ' && game[0][2]==game[1][1] && game[1][1]==game[2][0])
-        return game[1][1];
-        
-    // Full game with no victories
-    if(count_marks(game) == 9)
-        return 't';
+    // Write your code here
 
     return 'a';
 }
 
 // print_game()
-// Summary: This function prints an ongoing tic tac toe game.
+// Summary: This function prints an ongoing tic-tac-toe game.
 // Arguments:
 //           game[3][3]: The state of the game.
 // Returns: Nothing.
@@ -237,9 +91,8 @@ void print_game(char game[][3]){
 }
 
 // Main function
-int main() {
+int main(){
     char game[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
-    //char game[3][3] = {{'X',' ','X'},{'O','O','O'},{' ','X',' '}};
     char user_mark = 'X', ai_mark = 'O', turn = 'X';
     std::string str;
 
@@ -255,12 +108,10 @@ int main() {
 
     while(get_state(game)=='a'){
         std::cout << turn << "'s turn...\n";    
-        if(turn==user_mark){
+        if(turn==user_mark)
             ask_for_move(game,user_mark);
-        }
-        else{
+        else
             make_move(game,ai_mark);
-        }
         print_game(game);
         turn = turn == 'X' ? 'O' : 'X';
     }
