@@ -23,6 +23,7 @@ int main() {
     std::string s;
     std::cout << "Enter a string: ";
     std::getline(std::cin,s);
+    std::transform(s.begin(), s.end(), s.begin(), tolower);
     std::cout << "\n\"" << s << (is_palindrome(s) ? "\" is" : "\" is not" ) << " a palindrome.\n\n";
     return 0;
 }
