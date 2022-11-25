@@ -1,7 +1,7 @@
 // C++ Code Challenges, LinkedIn Learning
 
 // Challenge #16: The Monty Hall Problem
-// Create an application that simulates the Monty Hall Problem 100,000 times, with the contestant choosing to switch his door every time.
+// Create an application that simulates the Monty Hall Problem 100,000 times, with the contestants choosing to switch their door every time.
 // Do this to prove that the probability of winning is approximately 0.6667, and not 0.5. 
 // https://en.wikipedia.org/wiki/Monty_Hall_problem 
 
