@@ -26,17 +26,17 @@ int main(){
     char game[N][M];  
     std::memset(game,'-',N*M); // Initialize game with dashes.
 
-    // A glider
-    game[0][1]='X'; // - X - - - - - - - -
-    game[1][2]='X'; // - - X - - - - - - -
-    game[2][0]='X'; // X X X - - - - - - -
-    game[2][1]='X';
-    game[2][2]='X';
+    // A glider     // - - - - - - - - - -
+    game[1][1]='X'; // - X - - - - - - - -
+    game[2][2]='X'; // - - X - - - - - - -
+    game[3][0]='X'; // X X X - - - - - - -
+    game[3][1]='X';
+    game[3][2]='X';
 
-    // A blinker
-    game[2][6]='X'; // - - - - - - - - - -
-    game[2][7]='X'; // - - - - - - - - - -
-    game[2][8]='X'; // - - - - - - X X X -
+    // A blinker    // - - - - - - - - - -
+    game[3][6]='X'; // - - - - - - - - - -
+    game[3][7]='X'; // - - - - - - - - - -
+    game[3][8]='X'; // - - - - - - X X X -
     
     int generation = 0;
     std::string go_on;
@@ -51,10 +51,10 @@ int main(){
 
         // Write your code here
         
-        std::cout << "Press Enter for the next generation, or type \"Exit\": ";
+        std::cout << "Press Enter for the next generation, or type \"Exit\": " << std::flush;
         std::getline(std::cin,go_on);
         std::transform(go_on.begin(), go_on.end(), go_on.begin(), toupper);
-        std::cout << "\n";
+        std::cout << "\n" << std::flush;
     }while(go_on.compare("EXIT")!=0);
     
     return 0;

@@ -44,7 +44,7 @@ int vowel_count(const std::string str){
 //void main(){    error: main() should return an int
 int main(){    
     std::string input; 
-    std::cout << "Enter some text: ";
+    std::cout << "Enter some text: " << std::flush;
 
     //std::cin >> input;  error: cin can't read phrases with spaces 
     std::getline(std::cin,input);

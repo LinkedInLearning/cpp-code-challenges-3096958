@@ -23,7 +23,7 @@ int main(){
     std::cout << "After a random delay, you'll be asked to type in a 3-letter word.\n";
     std::cout << "When that happens, type in the word as fast as you can, and hit Enter.\n";
     std::cout << "Don't worry about the character case (\"CAT\" = \"cat\" = \"CaT\").\n\n";
-    std::cout << "            Press Enter when you're ready to start. ";
+    std::cout << "            Press Enter when you're ready to start." << std::flush;
 
     std::string try_again;
     std::getline(std::cin,try_again);

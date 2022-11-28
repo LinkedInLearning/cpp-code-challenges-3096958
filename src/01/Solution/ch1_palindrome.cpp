@@ -22,7 +22,7 @@ bool is_palindrome(std::string str){
 // Main function
 int main(){
     std::string s;
-    std::cout << "Enter a string: ";
+    std::cout << "Enter a string: " << std::flush;
     std::getline(std::cin,s);
     std::cout << "\n\"" << s << (is_palindrome(s) ? "\" is" : "\" is not" ) << " a palindrome.\n\n";
     return 0;

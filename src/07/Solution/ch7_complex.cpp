@@ -55,6 +55,6 @@ int main(){
     v = z / w;   
     v.print(std::cout);
 
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl << std::endl << std::flush;
     return 0;
 }

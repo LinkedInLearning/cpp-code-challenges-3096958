@@ -13,11 +13,11 @@
 int main(){
     int birth_y, birth_m, birth_d, today_y, today_m, today_d, age;
 
-    std::cout << "Enter your birth date's month as a number: ";
+    std::cout << "Enter your birth date's month as a number: " << std::flush;
     std::cin >> birth_m;
-    std::cout << "Enter your birth date's day: ";
+    std::cout << "Enter your birth date's day: " << std::flush;
     std::cin >> birth_d;
-    std::cout << "Enter your birth date's year: ";
+    std::cout << "Enter your birth date's year: " << std::flush;
     std::cin >> birth_y;
     
     if(birth_m < 1)
@@ -31,5 +31,5 @@ int main(){
         std::cout << "You are " << age << " days old.";
     else
         std::cout << "Come on. You can't be " << age << " days old!";
-    std::cout << "\n\n";
+    std::cout << "\n\n" << std::flush;
 }

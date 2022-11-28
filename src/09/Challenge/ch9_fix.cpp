@@ -32,7 +32,7 @@ int vowel_count(const std::string str){
 // Summary: This application ask the user for a string, and prints the number of vowels in it.
 void main(){
     std::string input; 
-    std::cout << "Enter some text: ";
+    std::cout << "Enter some text: " << std::flush;
     std::cin >> input;
     std::cout << "\nThe text you entered contains " << vowel_count(input) << " vowels.\n\n";
 }

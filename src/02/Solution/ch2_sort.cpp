@@ -40,13 +40,13 @@ bool sort_array(int *arr, int n){
 int main(){
     // The following array will be treated as an array of length len. 
     const int len = 7; // Don't exceed the length of the array below!
-    int array[] = {2, 9, 4, 3, 5, 1, 6, 8, 7};
+    int array[] = {2, 9, 4, 3, 5, 1, 6, 8, 0, 7};
 
     // Print the original array
     std::cout << "Original Array: [ ";
     for (int i = 0; i < len; i++)
         std::cout << array[i] << " ";
-    std::cout << "]" << std::endl;
+    std::cout << "]" << std::endl << std::endl << std::flush;
 
     sort_array(array, len); // Sort the array
 
@@ -54,7 +54,7 @@ int main(){
     std::cout << "  Sorted Array: [ ";
     for (int i = 0; i < len; i++)
         std::cout << array[i] << " ";
-    std::cout << "]" << std::endl << std::endl;
+    std::cout << "]" << std::endl << std::endl << std::flush;
 
     return 0;
 }

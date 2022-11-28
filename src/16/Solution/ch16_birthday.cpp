@@ -17,7 +17,7 @@ int main(){
     int b_days[366];
     bool match = false;
 
-    std::cout << "Enter the number of people in the group: ";
+    std::cout << "Enter the number of people in the group: " << std::flush;
     std::cin >> n;
 
     if(n > 366)
@@ -49,7 +49,7 @@ int main(){
         }
     }
 
-    std::cout << "The probability of a birthday match is " << (double)matches/total << "\n\n";  
+    std::cout << "The probability of a birthday match is " << (double)matches/total << "\n\n" << std::flush;  
 
     return 0;
 }

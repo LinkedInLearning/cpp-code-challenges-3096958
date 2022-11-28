@@ -31,7 +31,7 @@ int main(){
         }
     }
     else{
-        std::cout << "Something went wrong\n";
+        std::cout << "Something went wrong\n" << std::flush;
         return 1;
     }
     
@@ -47,12 +47,12 @@ int main(){
     for(int i=0; i<people.size()-1; i++){
         for(int j=i+1; j<people.size(); j++)
             if(people[i][1].compare(people[j][1]) == 0){
-                std::cout << people[i][0] << " " << people[i][1] << " may be related to " << people[j][0] << " " << people[j][1] << ".\n\n";    
+                std::cout << people[i][0] << " " << people[i][1] << " may be related to " << people[j][0] << " " << people[j][1] << ".\n\n" << std::flush;    
                 file.close();
                 return 0;
             }
     }
-    std::cout << "No relatives found.\n\n";
+    std::cout << "No relatives found.\n\n" << std::flush;
     file.close();        
     return 0;
 }

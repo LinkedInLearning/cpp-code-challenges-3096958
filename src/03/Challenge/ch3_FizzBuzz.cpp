@@ -12,7 +12,7 @@
 int main(){
     int n; // How many numbers to include in the sequence.
     
-    std::cout << "Enter a positive integer: ";
+    std::cout << "Enter a positive integer: " << std::flush;
     std::cin >> n;
 
     // Write your code here

@@ -24,13 +24,13 @@ int main(){
     
     }
     else{
-        std::cout << "Something went wrong\n";
+        std::cout << "Something went wrong\n" << std::flush;
         return 1;
     }
 
     // Write your code here
 
-    std::cout << "No relatives found.\n\n";    
+    std::cout << "No relatives found.\n\n" << std::flush;    
     file.close();        
     return 0;
 }

@@ -13,16 +13,16 @@ int main(){
     int n; // How many numbers to include in the sequence.
     bool m3, m5; // Booleans for multiples of 3 and multiples of 5.
 
-    std::cout << "Enter a positive integer: ";
+    std::cout << "Enter a positive integer: " << std::flush;
     std::cin >> n;
 
-    for (int i = 1; i <= n; i++) {
+    for(int i = 1; i <= n; i++){
         m3 = (i % 3) == 0;
         m5 = (i % 5) == 0;
 
-        if (!m3 && !m5)
+        if(!m3 && !m5)
             std::cout << i;
-        else {
+        else{
             if (m3)
                 std::cout << "Fizz";
             if (m5)
@@ -30,5 +30,6 @@ int main(){
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl << std::flush;
     return 0;
 }

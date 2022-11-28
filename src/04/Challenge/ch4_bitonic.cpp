@@ -43,6 +43,6 @@ int main(){
 
     std::cout << std::endl;
     std::cout << (is_bitonic(myvec) == true ? "Yes, it is bitonic." : "No, it is not bitonic.");
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl << std::endl << std::flush;
     return 0;
 }

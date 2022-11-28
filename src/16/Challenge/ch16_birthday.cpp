@@ -15,7 +15,7 @@ int main(){
     const int total = 1000000;
     int n, matches=0;
 
-    std::cout << "Enter the number of people in the group: ";
+    std::cout << "Enter the number of people in the group: " << std::flush;
     std::cin >> n;
 
     if(n > 366)
@@ -24,7 +24,7 @@ int main(){
         // Write your code here
     }
 
-    std::cout << "The probability of a birthday match is " << (double)matches/total << "\n\n";  
+    std::cout << "The probability of a birthday match is " << (double)matches/total << "\n\n" << std::flush;  
 
     return 0;
 }

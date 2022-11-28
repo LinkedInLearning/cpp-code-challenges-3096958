@@ -16,10 +16,10 @@ void ask_for_move(char game[][3], char mark){
     std::string str;
     int row, col;
     do{
-        std::cout << "Place your mark (" << mark << ") in row: ";
+        std::cout << "Place your mark (" << mark << ") in row: " << std::flush;
         std::cin >> str;
         row = stoi(str);
-        std::cout << "Place your mark (" << mark << ") in column: ";
+        std::cout << "Place your mark (" << mark << ") in column: " << std::flush;
         std::cin >> str;
         col = stoi(str);
     }while(game[row-1][col-1]!=' ');
@@ -242,7 +242,7 @@ int main(){
     char user_mark = 'X', ai_mark = 'O', turn = 'X';
     std::string str;
 
-    std::cout << "Pick your mark (X goes first): ";
+    std::cout << "Pick your mark (X goes first): " << std::flush;
     std::cin >> str;
     if(str[0]== 'O' || str[0]== 'o'){
         user_mark = 'O';
@@ -265,5 +265,6 @@ int main(){
         std::cout << "It's a tie.\n\n";
     else    
         std::cout << get_state(game) << " is the winner.\n\n";
+    std::cout << std::flush;
     return 0;
 }

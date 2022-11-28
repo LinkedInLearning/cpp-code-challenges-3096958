@@ -24,6 +24,6 @@ int print_factorials(int n){
 // Main function
 int main(){
     print_factorials(10);
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl << std::endl << std::flush;
     return 0;
 }

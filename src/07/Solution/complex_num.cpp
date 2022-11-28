@@ -41,4 +41,5 @@ void complex_num::print(std::ostream &os){
         os << real << " + " << imaginary << "i";
     else
         os << real << " - " << imaginary * -1 << "i";
+    os << std::flush;
 }

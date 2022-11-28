@@ -25,7 +25,7 @@ int main(){
         file.close();
     }
     else{
-        std::cout << "Something went wrong\n";
+        std::cout << "Something went wrong\n\n";
         return 1;
     }
     
@@ -34,6 +34,7 @@ int main(){
         std::cout << "The file is valid!\n\n";
     else
         std::cout << "The file is invalid!\n\n";
+    std::cout << std::flush;
     return 0;
 }
  

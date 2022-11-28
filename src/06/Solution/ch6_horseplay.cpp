@@ -61,6 +61,6 @@ int main(){
 
     for (auto element : the_moves)
         std::cout << element << " ";
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl << std::endl << std::flush;
     return 0;
 }
