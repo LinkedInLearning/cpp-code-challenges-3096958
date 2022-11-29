@@ -20,7 +20,7 @@
 // Returns: A boolean value: True for bitonic sequences, false otherwise.
 bool is_bitonic(const std::vector<int> &v){
     int count = v.size();
-    if (count < 4) return false;
+    if (count < 2) return true;
 
     bool rising = false;
     int i = 0;
@@ -88,7 +88,6 @@ int main(){
     // std::vector<int> myvec = {5, 4, 6, 5, 4};  // No
     // std::vector<int> myvec = {5, 4, 6, 5, 5};  // Yes
 
-    std::cout << std::endl;
     std::cout << (is_bitonic(myvec) == true ? "Yes, it is bitonic." : "No, it is not bitonic.");
     std::cout << std::endl << std::endl << std::flush;
     return 0;
