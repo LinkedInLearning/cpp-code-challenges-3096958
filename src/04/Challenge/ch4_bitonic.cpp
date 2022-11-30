@@ -41,7 +41,6 @@ int main(){
     // std::vector<int> myvec = {5, 4, 6, 5, 4};  // No
     // std::vector<int> myvec = {5, 4, 6, 5, 5};  // Yes
 
-    std::cout << std::endl;
     std::cout << (is_bitonic(myvec) == true ? "Yes, it is bitonic." : "No, it is not bitonic.");
     std::cout << std::endl << std::endl << std::flush;
     return 0;
