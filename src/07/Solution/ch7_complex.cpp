@@ -31,8 +31,9 @@ int main(){
     w.print(std::cout);
     std::cout << std::endl << std::endl;
 
-    // Addition
     complex_num v;
+    
+    // Addition
     std::cout << "z + w = ";
     v = z + w;   
     v.print(std::cout);
