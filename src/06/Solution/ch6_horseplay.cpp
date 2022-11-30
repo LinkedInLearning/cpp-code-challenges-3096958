@@ -46,15 +46,13 @@ std::vector<std::string> knight_moves(std::string knight){
                 new_loc[1] = new_y + '0';
                 moves.push_back(new_loc);
             }
-
         }
-
     return moves;
 }
 
 // Main function
 int main(){
-    std::string knight = "d4";
+    std::string knight = "d5";
     
     std::vector<std::string> the_moves = knight_moves(knight);
     std::cout << std::endl << "Possible moves from " << knight << ": ";

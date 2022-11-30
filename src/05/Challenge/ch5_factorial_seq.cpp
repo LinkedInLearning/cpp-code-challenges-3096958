@@ -12,7 +12,7 @@
 // print_factorials()
 // Summary: This function receives a (small) positive integer n and prints out a sequence from 0! through n!.
 // Arguments:
-//           n: The last factorial to print.
+//           n: The argument of the last factorial to print.
 // Returns: n!, the last calculated factorial.
 int print_factorials(int n){
     
