@@ -17,5 +17,6 @@ int main(){
 
     // Write your code here
     
+    std::cout << std::endl << std::flush;
     return 0;
 }
