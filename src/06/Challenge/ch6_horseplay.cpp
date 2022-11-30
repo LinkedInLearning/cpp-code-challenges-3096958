@@ -17,6 +17,15 @@
 // Returns: An STL vector of strings with the possible locations to move.
 std::vector<std::string> knight_moves(std::string knight){
     std::vector<std::string> moves;
+    int x, y;
+    x = knight[0] - 'a' + 1;
+    y = knight[1] - '0';
+    const int delta1[2] = {-1, 1};
+    const int delta2[2] = {-2, 2};
+    
+    int new_x;
+    int new_y;
+    std::string new_loc = "  ";
 
     // Write your code here
 
@@ -25,7 +34,7 @@ std::vector<std::string> knight_moves(std::string knight){
 
 // Main function
 int main(){
-    std::string knight = "d5";
+    std::string knight;
     
     std::cout << "Enter the location of the knight: " << std::flush;
     std::cin >> knight;

@@ -52,7 +52,7 @@ std::vector<std::string> knight_moves(std::string knight){
 
 // Main function
 int main(){
-    std::string knight = "d5";
+    std::string knight;
     
     std::cout << "Enter the location of the knight: " << std::flush;
     std::cin >> knight;
