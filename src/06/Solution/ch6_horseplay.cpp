@@ -52,19 +52,22 @@ std::vector<std::string> knight_moves(std::string knight){
 
 // Main function
 int main(){
-    std::string knight = "d5";
-    std::vector<std::string> the_moves = knight_moves(knight);
+    std::string knight;
+    std::vector<std::string> moves1, moves2;
+
+    knight = "d5";
+    moves1 = knight_moves(knight);
     std::cout << std::endl << "Possible moves from " << knight << ": ";
 
-    for (auto element : the_moves)
+    for (auto element : moves1)
         std::cout << element << " ";
     std::cout << std::endl << std::endl << std::flush;
 
     knight = "h7";
-    std::vector<std::string> the_moves = knight_moves(knight);
+    moves2 = knight_moves(knight);
     std::cout << std::endl << "Possible moves from " << knight << ": ";
 
-    for (auto element : the_moves)
+    for (auto element : moves2)
         std::cout << element << " ";
     std::cout << std::endl << std::endl << std::flush;
 
