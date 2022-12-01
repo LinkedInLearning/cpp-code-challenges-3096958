@@ -27,20 +27,6 @@ void ask_for_move(char game[][3], char mark){
     return;
 }
 
-// count_marks()
-// Summary: This function returns the number of marks placed in the game (X and O alike).
-// Arguments:
-//           game[3][3]: The state of the game.
-// Returns: An integer with the mark count.
-int count_marks(char game[][3]){
-    int i, j, count = 0;
-    for(i=0; i<3; i++)
-        for(j=0; j<3; j++)
-            if(game[i][j] != ' ')
-                count++;
-    return count;
-}
-
 // make_move()
 // Summary: This AI function makes a move on behalf of the computer in an ongoing tic-tac-toe game.
 // Arguments:
@@ -69,7 +55,7 @@ void make_move(char game[][3], char mark){
 //                                  'X': X won.
 //                                  'O': O won.
 //                                  't': A tie.
-char get_state(char game[][3]){
+char game_state(char game[][3]){
 
     // Write your code here
 
@@ -110,7 +96,7 @@ int main(){
 
     print_game(game);
 
-    while(get_state(game)=='a'){
+    while(game_state(game)=='a'){
         std::cout << turn << "'s turn...\n";    
         if(turn==user_mark)
             ask_for_move(game,user_mark);
@@ -119,10 +105,10 @@ int main(){
         print_game(game);
         turn = turn == 'X' ? 'O' : 'X';
     }
-    if(get_state(game)=='t')
+    if(game_state(game)=='t')
         std::cout << "It's a tie.\n\n";
     else    
-        std::cout << get_state(game) << " is the winner.\n\n";
+        std::cout << game_state(game) << " is the winner.\n\n";
     std::cout << std::flush;
     return 0;
 }

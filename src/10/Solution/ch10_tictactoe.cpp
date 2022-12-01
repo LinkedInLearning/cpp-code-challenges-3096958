@@ -27,20 +27,6 @@ void ask_for_move(char game[][3], char mark){
     return;
 }
 
-// count_marks()
-// Summary: This function returns the number of marks placed in the game (X and O alike).
-// Arguments:
-//           game[3][3]: The state of the game.
-// Returns: An integer with the mark count.
-int count_marks(char game[][3]){
-    int i, j, count = 0;
-    for(i=0; i<3; i++)
-        for(j=0; j<3; j++)
-            if(game[i][j] != ' ')
-                count++;
-    return count;
-}
-
 // make_move()
 // Summary: This AI function makes a move on behalf of the computer in an ongoing tic-tac-toe game.
 // Arguments:
@@ -48,12 +34,12 @@ int count_marks(char game[][3]){
 //           mark: The AI's mark: 'X' or 'O'.
 // Returns: Nothing.
 
-//#define TWO_PLAYERS
+// #define TWO_PLAYERS
 void make_move(char game[][3], char mark){ 
     #ifdef TWO_PLAYERS
     ask_for_move(game,mark);
     #else
-    // Win if possible
+    // Step 1: Win if possible
     int i, j;
     char opponent = mark == 'X' ? 'O' : 'X';
 
@@ -112,7 +98,7 @@ void make_move(char game[][3], char mark){
         return;
     }
 
-    // Block if possible
+    // Step 2: Block if possible
 
     // Horizontal and vertical threats
     for(i=0; i<3; i++){ 
@@ -169,20 +155,20 @@ void make_move(char game[][3], char mark){
         return;
     }
 
-    // Take the middle square if vacant
+    // Step 3: Take the middle square if vacant
     if(game[1][1]==' '){
         game[1][1] = mark;
         return;
     }
 
-    // Take any vacant square sequentially
+    // Step 4: Take any vacant square sequentially
     for(i=0; i<3; i++)
         for(j=0; j<3; j++)
             if(game[i][j] == ' '){
                  game[i][j] = mark;
                  return;
             }
- 
+
     #endif
     return;
 }
@@ -196,13 +182,9 @@ void make_move(char game[][3], char mark){
 //                                  'X': X won.
 //                                  'O': O won.
 //                                  't': A tie.
-char get_state(char game[][3]){
+char game_state(char game[][3]){
     int i, j;
 
-    // Full game with no victories
-    if(count_marks(game) == 9)
-        return 't';
-        
     // Horizontal and vertical victories
     for(i=0; i<3; i++){ 
         if(game[i][0]!= ' ' && game[i][0]==game[i][1] && game[i][1]==game[i][2])
@@ -216,8 +198,18 @@ char get_state(char game[][3]){
         return game[1][1];
     if(game[1][1]!= ' ' && game[0][2]==game[1][1] && game[1][1]==game[2][0])
         return game[1][1];
-
-    return 'a';
+    
+    // Full game with no victories means a tie
+    int count = 0;
+    for(i=0; i<3; i++)
+        for(j=0; j<3; j++)
+            if(game[i][j] != ' ')
+                count++;
+    if(count == 9)
+        return 't';
+    
+    // An active game
+    return 'a'; 
 }
 
 // print_game()
@@ -254,7 +246,7 @@ int main(){
 
     print_game(game);
 
-    while(get_state(game)=='a'){
+    while(game_state(game)=='a'){
         std::cout << turn << "'s turn...\n";    
         if(turn==user_mark)
             ask_for_move(game,user_mark);
@@ -263,10 +255,10 @@ int main(){
         print_game(game);
         turn = turn == 'X' ? 'O' : 'X';
     }
-    if(get_state(game)=='t')
+    if(game_state(game)=='t')
         std::cout << "It's a tie.\n\n";
     else    
-        std::cout << get_state(game) << " is the winner.\n\n";
+        std::cout << game_state(game) << " is the winner.\n\n";
     std::cout << std::flush;
     return 0;
 }
