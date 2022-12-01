@@ -169,11 +169,13 @@ void make_move(char game[][3], char mark){
         return;
     }
 
+    // Take the middle square if vacant
     if(game[1][1]==' '){
         game[1][1] = mark;
         return;
     }
 
+    // Take any vacant square sequentially
     for(i=0; i<3; i++)
         for(j=0; j<3; j++)
             if(game[i][j] == ' '){
