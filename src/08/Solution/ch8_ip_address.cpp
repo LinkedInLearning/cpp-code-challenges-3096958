@@ -30,7 +30,7 @@ bool is_number(const std::string &str){
 // Returns: A vector of strings containing the tokens.
 std::vector<std::string> get_tokens(const std::string &str){
     size_t i = 0;
-    int dot = -1;
+    size_t dot = -1;
     std::vector<std::string> tokens;
 
     do{
