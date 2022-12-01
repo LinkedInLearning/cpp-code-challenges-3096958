@@ -48,10 +48,15 @@ int count_marks(char game[][3]){
 //           mark: The AI's mark: 'X' or 'O'.
 // Returns: Nothing.
 
+#define TWO_PLAYERS
 void make_move(char game[][3], char mark){ 
+    #ifdef TWO_PLAYERS
+    ask_for_move(game,mark);
+    #else
+    
+    // Write your code here and comment out the definition of TWO_PLAYERS above
 
-    // Write your code here
-
+    #endif
     return;
 }
 
