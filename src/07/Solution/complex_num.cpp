@@ -7,15 +7,15 @@ complex_num::complex_num(double r, double i){
 
 complex_num complex_num::operator +(complex_num w){
     complex_num z;
-    z.real = this->real+w.real;
-    z.imaginary = this->imaginary+w.imaginary;
+    z.real = real + w.real;
+    z.imaginary = imaginary + w.imaginary;
     return z;
 }
 
 complex_num complex_num::operator -(complex_num w){
     complex_num z;
-    z.real=this->real - w.real;
-    z.imaginary=this->imaginary - w.imaginary;
+    z.real = real - w.real;
+    z.imaginary = imaginary - w.imaginary;
     return z;
 }
 
