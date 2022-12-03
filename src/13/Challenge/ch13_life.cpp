@@ -3,7 +3,7 @@
 // Challenge #13: Conway's Game of Life
 // Write an application that runs Conway's Game of Life, the best-known cellular automaton.
 // Do this for a 10x10 grid.
-// The grid wraps around in all directions.
+// The grid wraps around in all directions, like the Pac-Man world.
 
 // Rules:
 // Any live cell with fewer than two live neighbors dies, as if by underpopulation.

@@ -65,7 +65,15 @@ int main(){
     game[3][6]='X'; // - - - - - - - - - -
     game[3][7]='X'; // - - - - - - - - - -
     game[3][8]='X'; // - - - - - - X X X -
-    
+
+/*
+    // An R-pentomino   // - - - - - 
+    game[11][12]='X';   // - - X X - 
+    game[11][13]='X';   // - X X - - 
+    game[12][11]='X';   // - - X - - 
+    game[12][12]='X';
+    game[13][12]='X';
+*/
     char new_game[N][M];
     int generation = 0;
     std::string go_on;
