@@ -23,26 +23,28 @@
 // Summary: This function returns the number of live neighbors to a given cell.
 // Arguments:
 //           game[N][M]: The state of the game.
+//                    i: The cell's row.
+//                    j: The cell's column.
 // Returns: An integer with the live neighbor count.
 int live_neighbors(char game[][M],int i, int j){
     int neighbors = 0;
     i+=N;
     j+=M;
-    if(game[(i+1)%N][(j+1)%M]=='X')
-        neighbors++;
-    if(game[(i+1)%N][j%M]=='X')
-        neighbors++;
-    if(game[(i+1)%N][(j-1)%M]=='X')
-        neighbors++;
-    if(game[i%N][(j+1)%M]=='X')
-        neighbors++;
-    if(game[i%N][(j-1)%M]=='X')
-        neighbors++;
-    if(game[(i-1)%N][(j+1)%M]=='X')
+    if(game[(i-1)%N][(j-1)%M]=='X')
         neighbors++;
     if(game[(i-1)%N][j%M]=='X')
         neighbors++;
-    if(game[(i-1)%N][(j-1)%M]=='X')
+    if(game[(i-1)%N][(j+1)%M]=='X')
+        neighbors++;
+    if(game[i%N][(j-1)%M]=='X')
+        neighbors++;
+    if(game[i%N][(j+1)%M]=='X')
+        neighbors++;
+    if(game[(i+1)%N][(j-1)%M]=='X')
+        neighbors++;
+    if(game[(i+1)%N][j%M]=='X')
+        neighbors++;
+    if(game[(i+1)%N][(j+1)%M]=='X')
         neighbors++;
     return neighbors;
 }
