@@ -15,7 +15,6 @@
 // Finding Relatives, main()
 // Summary: This application displays the first pair of possible relatives from a list of names in a CSV file.
 int main(){
-
     std::fstream file ("names.csv", std::ios::in);
     // Read the CSV file.
     if(file.is_open()){
@@ -31,7 +30,6 @@ int main(){
     // Write your code here
 
     std::cout << "No relatives found.\n\n" << std::flush;    
-    file.close();        
     return 0;
 }
  

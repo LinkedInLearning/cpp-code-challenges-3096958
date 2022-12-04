@@ -28,14 +28,15 @@ int main(){
             while(std::getline(str, name,' '))
                 person.push_back(name);
             people.push_back(person);
-        }
+        }   
+        file.close();
     }
     else{
         std::cout << "Something went wrong\n" << std::flush;
         return 1;
     }
     
-    std::cout<<"\nPeople found in the CSV file:\n\n";
+    std::cout<<"People found in the CSV file:\n\n";
     
     for(int i=0; i<people.size(); i++){
         for(int j=0; j<people[i].size(); j++)
@@ -47,13 +48,11 @@ int main(){
     for(int i=0; i<people.size()-1; i++){
         for(int j=i+1; j<people.size(); j++)
             if(people[i][1].compare(people[j][1]) == 0){
-                std::cout << people[i][0] << " " << people[i][1] << " may be related to " << people[j][0] << " " << people[j][1] << ".\n\n" << std::flush;    
-                file.close();
+                std::cout << people[i][0] << " " << people[i][1] << " may be related to " << people[j][0] << " " << people[j][1] << ".\n\n" << std::flush; 
                 return 0;
             }
     }
-    std::cout << "No relatives found.\n\n" << std::flush;
-    file.close();        
+    std::cout << "No relatives found.\n\n" << std::flush;  
     return 0;
 }
  
