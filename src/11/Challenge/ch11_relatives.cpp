@@ -21,6 +21,7 @@ int main(){
 
         // Write your code here
     
+        file.close();
     }
     else{
         std::cout << "Something went wrong\n" << std::flush;
