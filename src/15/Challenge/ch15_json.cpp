@@ -10,30 +10,38 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stack>
 
-// JSON File Validation, main()
-// Summary: This application checks the balance of braces, brackets, and quotes in a JSON file.
-int main(){ 
+// is_valid_JSON()
+// Summary: This function returns true if the file in the argument is a valid JSON file based on its balance of braces, brackets, and quotes.
+// Arguments:
+//           filename: A string with the name of the file to open.
+// Returns: An integer enconding: 1 for valid JSON files, 0 for invalid, and -1 on failure to open file. 
+int is_valid_JSON(std::string filename){
     std::string line;
-    int braces=0, brackets=0, quotes=0; // Counters
-    
-    std::fstream file ("jason.json", std::ios::in);
-    if(file.is_open()){
+    bool quotes = false; 
 
+    std::fstream file (filename, std::ios::in);
+    if(file.is_open()){
+ 
         // Write your code here
 
         file.close();
     }
-    else{
-        std::cout << "Something went wrong\n\n";
-        return 1;
-    }
-    
-    // Final verdict.
-    if(brackets==0 && braces==0 && quotes==0)
-        std::cout << "The file is valid!\n\n";
     else
-        std::cout << "The file is invalid!\n\n";
+        return -1;
+}
+
+// JSON File Validation, main()
+int main(){
+    int x = is_valid_JSON("jason.json");
+
+    if(x == 1)
+        std::cout << "The JSON file is valid!\n\n";
+    else if(x == 0)
+        std::cout << "The JSON file is invalid!\n\n";
+    else
+        std::cout << "Could not open the file!\n\n";  
     std::cout << std::flush;
     return 0;
 }
