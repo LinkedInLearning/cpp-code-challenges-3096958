@@ -42,8 +42,8 @@ int main(){
     if(birth_m > 12)
         birth_m = 12;
  
-    time_t     now = time(0);
-    struct tm  tstruct;
+    time_t now = time(0);
+    struct tm tstruct;
     tstruct = *localtime(&now);
     today_d = tstruct.tm_mday;
     today_m = tstruct.tm_mon + 1;

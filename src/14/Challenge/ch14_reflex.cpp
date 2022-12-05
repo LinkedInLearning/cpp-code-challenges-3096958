@@ -26,13 +26,13 @@ int main(){
     std::cout << "            Press Enter when you're ready to start." << std::flush;
 
     std::string try_again;
-    std::getline(std::cin,try_again);
+    std::getline(std::cin, try_again);
     do{
 
         // Write your code here
 
         std::cout << "Try again? (Y/N): " << std::flush;
-        std::cin >> try_again;
+        std::getline(std::cin, try_again);
     }while(try_again[0]=='Y' || try_again[0]=='y');
     return 0;
 }
