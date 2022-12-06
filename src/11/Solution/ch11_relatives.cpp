@@ -28,7 +28,7 @@ int main(){
             while(std::getline(str, name,' '))
                 person.push_back(name);
             people.push_back(person);
-        }   
+        }
         file.close();
     }
     else{
