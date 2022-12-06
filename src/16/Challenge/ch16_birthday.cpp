@@ -13,7 +13,7 @@
 // Summary: This application simulates the birthday problem a large number of times to reveal the probability of a birthday match in a groupd of a given number of people.
 int main(){    
     const int total = 1000000;
-    int n, matches=0;
+    int n, matches;
 
     std::cout << "Enter the number of people in the group: " << std::flush;
     std::cin >> n;
