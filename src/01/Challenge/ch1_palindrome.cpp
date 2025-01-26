@@ -15,8 +15,7 @@
 bool is_palindrome(std::string str){
     std::string str_old = str, str_new = str;
     reverse(str_new.begin(),str_new.end());
-    if(str_old == str_new) return true;
-    else return false;
+    return str_old == str_new;
 }
 
 // Main function
